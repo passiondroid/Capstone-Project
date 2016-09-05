@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "400785403641",
+    "firebase_url": "https://health-plus-db0c2.firebaseio.com",
+    "project_id": "health-plus-db0c2",
+    "storage_bucket": "health-plus-db0c2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:400785403641:android:1dc6cb352a266aaf",
+        "android_client_info": {
+          "package_name": "plus.health.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "400785403641-8b0h7infn8mui743hnq7hsqeoe2pcg2f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "plus.health.app",
+            "certificate_hash": "B1C8CE5205968A429EB2F4A67662CD99EB5CE118"
+          }
+        },
+        {
+          "client_id": "400785403641-csnbklsinfcomdr4usbqifat1ismobcd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "plus.health.app",
+            "certificate_hash": "E8A05EBAB5AC405F881C3091A99484E97C5DA638"
+          }
+        },
+        {
+          "client_id": "400785403641-hubdj9pklas5iriir55gretp0eql04di.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBaKpdYsk2MWFxG9GfvOpj1EokJig0SvE4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "400785403641-hubdj9pklas5iriir55gretp0eql04di.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

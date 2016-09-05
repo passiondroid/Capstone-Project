@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Health Plus</string>
+    <string name="web_client_id">400785403641-hubdj9pklas5iriir55gretp0eql04di.apps.googleusercontent.com</string>
+    <string name="title_activity_home">Medications</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_add_medications">Add Medications</string>
+    <string name="add_a_doctor">Add a doctor</string>
+    <string name="add_prescriptions">Add prescriptions</string>
+    <string name="add_lab_reports">Add lab reports</string>
+    <string name="add_medication_image">Add medication image</string>
+    <string name="problem">Problem for which you are taking Medication</string>
+    <string name="title_activity_add_doctor">Add Doctor</string>
+    <string name="title_activity_detail">Detail</string>
+</resources>

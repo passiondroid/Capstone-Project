@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_add_medications"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="plus.health.app.fragment.AddMedicationsFragment"
+    android:padding="@dimen/fab_margin"
+    tools:showIn="@layout/activity_add_medications">
+
+
+    <LinearLayout
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_above="@+id/saveBtn"
+        android:gravity="center">
+
+    <EditText
+        android:id="@+id/problemET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="@string/problem"
+        android:layout_marginBottom="@dimen/margin_button"
+        android:ems="10" />
+
+        <Button
+            android:id="@+id/addDoctor"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_button"
+            android:text="@string/add_a_doctor"/>
+
+        <Button
+            android:id="@+id/pBtn"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_button"
+            android:text="@string/add_prescriptions"/>
+
+        <Button
+            android:id="@+id/reportBtn"
+            style="@style/ButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_button"
+            android:text="@string/add_lab_reports"/>
+    </LinearLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/listPrescription"
+        android:layout_width="match_parent"
+        android:layout_height="120dp">
+    </android.support.v7.widget.RecyclerView>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/listReports"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/listPrescription"
+        android:layout_height="120dp">
+    </android.support.v7.widget.RecyclerView>
+
+    <Button
+        android:text="Save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="42dp"
+        android:id="@+id/saveBtn" />
+</RelativeLayout>
