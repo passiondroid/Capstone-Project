@@ -1,8 +1,8 @@
 HealthPlus is an Android app which will help its users to keep track of their health records like - Lab reports, Doctor prescriptions etc
 
-**License**
+# License
 
-Copyright 2016 Nishant Srivastava
+Copyright 2016 Arif Khan
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
