@@ -10,9 +10,11 @@
     tools:showIn="@layout/activity_add_doctor">
 
     <ImageView
+        android:id="@+id/image"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:srcCompat="@drawable/ic_photo"
+        android:scaleType="center"
         android:layout_weight="5"/>
 
     <LinearLayout
@@ -33,6 +35,9 @@
             android:layout_gravity="center"
             android:layout_height="wrap_content"
             android:layout_weight="0.8"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:imeOptions="actionNext"
             android:id="@+id/nameET" />
     </LinearLayout>
 
@@ -54,6 +59,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:inputType="number"
+            android:imeOptions="actionNext"
             android:layout_weight="0.8"/>
     </LinearLayout>
 
@@ -75,6 +82,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:inputType="textEmailAddress"
+            android:maxLines="1"
+            android:imeOptions="actionNext"
             android:layout_weight="0.8"/>
     </LinearLayout>
 
@@ -96,6 +106,9 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:maxLines="1"
+            android:inputType="text"
+            android:imeOptions="actionDone"
             android:layout_weight="0.8"/>
     </LinearLayout>
 
@@ -103,6 +116,7 @@
         android:id="@+id/saveBtn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
         android:text="Save"/>
 
 </LinearLayout>

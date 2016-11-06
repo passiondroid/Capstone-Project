@@ -37,6 +37,7 @@ import java.util.Date;
 import java.util.List;
 import plus.health.app.R;
 import plus.health.app.activity.AddDoctorActivity;
+import plus.health.app.adapter.DoctorAdapter;
 import plus.health.app.adapter.ItemAdapter;
 import plus.health.app.database.DataContract;
 import plus.health.app.interfaces.PickerDialogListener;
@@ -45,6 +46,7 @@ import plus.health.app.model.Item;
 
 import static android.R.attr.name;
 import static android.app.Activity.RESULT_OK;
+import static android.support.v7.recyclerview.R.styleable.RecyclerView;
 
 /**
  * A placeholder fragment containing a simple view.
@@ -62,9 +64,11 @@ public class AddMedicationsFragment extends Fragment implements View.OnClickList
     String mCurrentPhotoPath;
     private Doctor doctor;
     private ItemAdapter prescAdapter,reportsAdapter;
+    private DoctorAdapter doctorAdapter;
     private List<Item> prescList = new ArrayList<>();
     private List<Item> reportsList = new ArrayList<>();
-    private RecyclerView prescRecyclerView, reportsRecyclerView;
+    private List<Doctor> doctorsList = new ArrayList<>();
+    private RecyclerView prescRecyclerView, reportsRecyclerView,doctorRV;
     private EditText problemET;
 
     public AddMedicationsFragment() {
@@ -84,7 +88,9 @@ public class AddMedicationsFragment extends Fragment implements View.OnClickList
         reportsBtn.setOnClickListener(this);
         addDoctorBtn.setOnClickListener(this);
         prescRecyclerView = (RecyclerView) view.findViewById(R.id.listPrescription);
+        doctorRV = (RecyclerView) view.findViewById(R.id.doctorRV);
         prescAdapter = new ItemAdapter(prescList,getActivity());
+        doctorAdapter = new DoctorAdapter(getActivity(),doctorsList);
         LinearLayoutManager layoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
         prescRecyclerView.setAdapter(prescAdapter);
         prescRecyclerView.setLayoutManager(layoutManager);
@@ -92,6 +98,7 @@ public class AddMedicationsFragment extends Fragment implements View.OnClickList
         reportsRecyclerView = (RecyclerView) view.findViewById(R.id.listReports);
         reportsAdapter = new ItemAdapter(reportsList,getActivity());
         reportsRecyclerView.setAdapter(reportsAdapter);
+        doctorRV.setAdapter(doctorAdapter);
         LinearLayoutManager reportsLayoutManager = new LinearLayoutManager(getActivity(), LinearLayoutManager.HORIZONTAL, false);
         reportsRecyclerView.setLayoutManager(reportsLayoutManager);
         return view;
@@ -219,7 +226,8 @@ public class AddMedicationsFragment extends Fragment implements View.OnClickList
             reportsAdapter.notifyDataSetChanged();
         }else if(requestCode == REQUEST_ADD_DOCTOR_INFO && resultCode == RESULT_OK){
             doctor = data.getParcelableExtra("doctor");
-            Toast.makeText(getActivity(), "Doctr added", Toast.LENGTH_SHORT).show();
+            doctorsList.add(doctor);
+            doctorAdapter.notifyDataSetChanged();
         }
     }
 

@@ -42,6 +42,8 @@ import plus.health.app.database.DataContract;
 import plus.health.app.model.Doctor;
 import plus.health.app.model.Item;
 import plus.health.app.model.Medication;
+import plus.health.app.model.Prescription;
+import plus.health.app.model.Report;
 import plus.health.app.model.User;
 
 public class LauncherActivity extends AppCompatActivity implements View.OnClickListener,GoogleApiClient.OnConnectionFailedListener {
@@ -201,123 +203,125 @@ public class LauncherActivity extends AppCompatActivity implements View.OnClickL
                                     Medication medication = new Medication();
                                     System.out.println("Medication Snapshot :::::::::::: "+medicationSpshot.toString());
                                     medication.setId(Integer.parseInt(medicationSpshot.getKey()));
-                                   // for (DataSnapshot medicationValueSpshot : dataSnapshot.getChildren()) {
-                                        HashMap map = (HashMap) medicationSpshot.getValue();
-                                        medication.setProblem(map.get("problem").toString());
-                                        List<Item> prescList = new ArrayList<>();
-                                        List<Item> reportList = new ArrayList<>();
-                                        List<Doctor> doctors = new ArrayList<>();
-                                        if(map.get("prescriptions") instanceof List){
-                                            List<Object> prescObjList = (List) map.get("prescriptions");
-                                            for (int i = 0; i < prescObjList.size(); i++) {
-                                                Object presc = prescObjList.get(i);
-                                                if (null != presc) {
-                                                    Item item = new Item();
-                                                    HashMap mapPresc = (HashMap) presc;
-                                                    item.setName(mapPresc.get("name").toString());
-                                                    item.setType(Integer.parseInt(mapPresc.get("type").toString()));
-                                                    item.setData(mapPresc.get("path").toString());
-                                                    item.setMedicationId(medication.getId());
-                                                    item.setId(i);
-                                                    prescList.add(item);
-                                                }
-                                            }
-                                        }else if(map.get("prescriptions") instanceof HashMap){
-                                            Item item = new Item();
-                                            HashMap mapPresc = (HashMap) map.get("prescriptions");
-                                            Iterator it = mapPresc.entrySet().iterator();
-                                            while (it.hasNext()) {
-                                                Map.Entry pair = (Map.Entry)it.next();
-                                                HashMap mapFinal = (HashMap) pair.getValue();
-                                                item.setName(mapFinal.get("name").toString());
-                                                item.setType(Integer.parseInt(mapFinal.get("type").toString()));
-                                                item.setData(mapFinal.get("path").toString());
+                                    // for (DataSnapshot medicationValueSpshot : dataSnapshot.getChildren()) {
+                                    HashMap map = (HashMap) medicationSpshot.getValue();
+                                    medication.setProblem(map.get("problem").toString());
+                                    List<Item> prescList = new ArrayList<>();
+                                    List<Item> reportList = new ArrayList<>();
+                                    List<Doctor> doctors = new ArrayList<>();
+                                    if(map.get("prescriptions") instanceof List){
+                                        List<Object> prescObjList = (List) map.get("prescriptions");
+                                        for (int i = 0; i < prescObjList.size(); i++) {
+                                            Object presc = prescObjList.get(i);
+                                            if (null != presc) {
+                                                Item item = new Item();
+                                                HashMap mapPresc = (HashMap) presc;
+                                                item.setName(mapPresc.get("name").toString());
+                                                item.setType(Integer.parseInt(mapPresc.get("type").toString()));
+                                                item.setData(mapPresc.get("path").toString());
                                                 item.setMedicationId(medication.getId());
-                                                item.setId(Integer.parseInt(pair.getKey().toString()));
+                                                item.setId(i);
                                                 prescList.add(item);
-                                                it.remove(); // avoids a ConcurrentModificationException
                                             }
-
+                                        }
+                                    }else if(map.get("prescriptions") instanceof HashMap){
+                                        Item item = new Item();
+                                        HashMap mapPresc = (HashMap) map.get("prescriptions");
+                                        Iterator it = mapPresc.entrySet().iterator();
+                                        while (it.hasNext()) {
+                                            Map.Entry pair = (Map.Entry)it.next();
+                                            HashMap mapFinal = (HashMap) pair.getValue();
+                                            item.setName(mapFinal.get("name").toString());
+                                            item.setType(Integer.parseInt(mapFinal.get("type").toString()));
+                                            item.setData(mapFinal.get("path").toString());
+                                            item.setMedicationId(medication.getId());
+                                            item.setId(Integer.parseInt(pair.getKey().toString()));
+                                            prescList.add(item);
+                                            it.remove(); // avoids a ConcurrentModificationException
                                         }
 
-                                        if(map.get("reports") instanceof List){
-                                            List<Object> prescObjList = (List) map.get("reports");
-                                            for (int i = 0; i < prescObjList.size(); i++) {
-                                                Object presc = prescObjList.get(i);
-                                                if (null != presc) {
-                                                    Item item = new Item();
-                                                    HashMap mapPresc = (HashMap) presc;
-                                                    item.setName(mapPresc.get("name").toString());
-                                                    item.setType(Integer.parseInt(mapPresc.get("type").toString()));
-                                                    item.setData(mapPresc.get("path").toString());
-                                                    item.setMedicationId(medication.getId());
-                                                    item.setId(i);
-                                                    reportList.add(item);
-                                                }
-                                            }
-                                        }else if(map.get("reports") instanceof HashMap){
-                                            Item item = new Item();
-                                            HashMap mapPresc = (HashMap) map.get("reports");
-                                            Iterator it = mapPresc.entrySet().iterator();
-                                            while (it.hasNext()) {
-                                                Map.Entry pair = (Map.Entry)it.next();
-                                                HashMap mapFinal = (HashMap) pair.getValue();
-                                                item.setName(mapFinal.get("name").toString());
-                                                item.setType(Integer.parseInt(mapFinal.get("type").toString()));
-                                                item.setData(mapFinal.get("path").toString());
+                                    }
+
+                                    if(map.get("reports") instanceof List){
+                                        List<Object> prescObjList = (List) map.get("reports");
+                                        for (int i = 0; i < prescObjList.size(); i++) {
+                                            Object presc = prescObjList.get(i);
+                                            if (null != presc) {
+                                                Item item = new Item();
+                                                HashMap mapPresc = (HashMap) presc;
+                                                item.setName(mapPresc.get("name").toString());
+                                                item.setType(Integer.parseInt(mapPresc.get("type").toString()));
+                                                item.setData(mapPresc.get("path").toString());
                                                 item.setMedicationId(medication.getId());
-                                                item.setId(Integer.parseInt(pair.getKey().toString()));
+                                                item.setId(i);
                                                 reportList.add(item);
-                                                it.remove(); // avoids a ConcurrentModificationException
                                             }
-
+                                        }
+                                    }else if(map.get("reports") instanceof HashMap){
+                                        Item item = new Item();
+                                        HashMap mapPresc = (HashMap) map.get("reports");
+                                        Iterator it = mapPresc.entrySet().iterator();
+                                        while (it.hasNext()) {
+                                            Map.Entry pair = (Map.Entry)it.next();
+                                            HashMap mapFinal = (HashMap) pair.getValue();
+                                            item.setName(mapFinal.get("name").toString());
+                                            item.setType(Integer.parseInt(mapFinal.get("type").toString()));
+                                            item.setData(mapFinal.get("path").toString());
+                                            item.setMedicationId(medication.getId());
+                                            item.setId(Integer.parseInt(pair.getKey().toString()));
+                                            reportList.add(item);
+                                            it.remove(); // avoids a ConcurrentModificationException
                                         }
 
-                                        if(map.get("doctors") instanceof List){
-                                            List<Object> doctorObjList = (List) map.get("doctors");
-                                            for (int i = 0; i < doctorObjList.size(); i++) {
-                                                Object presc = doctorObjList.get(i);
-                                                if (null != presc) {
-                                                    Doctor item = new Doctor();
-                                                    HashMap mapPresc = (HashMap) presc;
-                                                    item.setName(mapPresc.get("name").toString());
-                                                    item.setEmail(mapPresc.get("email").toString());
-                                                    item.setAddress(mapPresc.get("address").toString());
-                                                    item.setPhoneNumber(mapPresc.get("phone_number").toString());
-                                                    item.setMedicationId(medication.getId());
-                                                    item.setId(i);
-                                                    doctors.add(item);
-                                                }
-                                            }
-                                        }else if(map.get("doctors") instanceof HashMap){
-                                            Doctor item = new Doctor();
-                                            HashMap mapPresc = (HashMap) map.get("doctors");
-                                            Iterator it = mapPresc.entrySet().iterator();
-                                            while (it.hasNext()) {
-                                                Map.Entry pair = (Map.Entry)it.next();
-                                                HashMap mapFinal = (HashMap) pair.getValue();
-                                                item.setName(mapFinal.get("name").toString());
-                                                item.setEmail(mapFinal.get("email").toString());
-                                                item.setAddress(mapFinal.get("address").toString());
-                                                item.setPhoneNumber(mapFinal.get("phone_number").toString());
+                                    }
+
+                                    if(map.get("doctor") instanceof List){
+                                        List<Object> doctorObjList = (List) map.get("doctor");
+                                        for (int i = 0; i < doctorObjList.size(); i++) {
+                                            Object presc = doctorObjList.get(i);
+                                            if (null != presc) {
+                                                Doctor item = new Doctor();
+                                                HashMap mapPresc = (HashMap) presc;
+                                                item.setName(mapPresc.get("name").toString());
+                                                item.setEmail(mapPresc.get("email").toString());
+                                                item.setAddress(mapPresc.get("address").toString());
+                                                item.setPhoneNumber(mapPresc.get("phoneNumber").toString());
                                                 item.setMedicationId(medication.getId());
-                                                item.setId(Integer.parseInt(pair.getKey().toString()));
+                                                item.setId(i);
                                                 doctors.add(item);
-                                                it.remove(); // avoids a ConcurrentModificationException
                                             }
-
+                                        }
+                                    }else if(map.get("doctor") instanceof HashMap){
+                                        Doctor item = new Doctor();
+                                        HashMap mapPresc = (HashMap) map.get("doctor");
+                                        Iterator it = mapPresc.entrySet().iterator();
+                                        while (it.hasNext()) {
+                                            Map.Entry pair = (Map.Entry)it.next();
+                                            HashMap mapFinal = (HashMap) pair.getValue();
+                                            item.setName(mapFinal.get("name").toString());
+                                            item.setEmail(mapFinal.get("email").toString());
+                                            item.setAddress(mapFinal.get("address").toString());
+                                            item.setPhoneNumber(mapFinal.get("phoneNumber").toString());
+                                            item.setMedicationId(medication.getId());
+                                            item.setId(Integer.parseInt(pair.getKey().toString()));
+                                            doctors.add(item);
+                                            it.remove(); // avoids a ConcurrentModificationException
                                         }
 
-                                        medication.setReportList(reportList);
-                                        medication.setPrescriptionList(prescList);
-                                        medication.setDoctorList(doctors);
+                                    }
 
-                                   // }
+                                    medication.setReportList(reportList);
+                                    medication.setPrescriptionList(prescList);
+                                    medication.setDoctorList(doctors);
+
+                                    // }
 
                                     medicationList.add(medication);
 
                                 }
                                 System.out.println("Medications Downloaded :::: " + medicationList);
+                                SaveInDbTask task = new SaveInDbTask();
+                                task.execute(medicationList);
                             }
 
                             @Override
@@ -343,6 +347,77 @@ public class LauncherActivity extends AppCompatActivity implements View.OnClickL
         user.setId(acct.getId());
         user.setPhotoURL(acct.getPhotoUrl().toString());
         return user;
+    }
+
+    private class SaveInDbTask extends AsyncTask<List<Medication>, Void, Boolean> {
+
+        @Override
+        protected Boolean doInBackground(List<Medication>... objects) {
+            //Add medication data
+            //TODO:check validation
+            Uri medicationUri = DataContract.Medications.CONTENT_URI;
+            List<Medication> medicationList = (List<Medication>) objects[0];
+            for (Medication medication: medicationList) {
+                try {
+                    ContentValues medValues = new ContentValues();
+                    medValues.put(DataContract.Medications.PROBLEM, medication.getProblem());
+                    Uri uri1 = getContentResolver().insert(medicationUri, medValues);
+                    int id = Integer.parseInt(uri1.getLastPathSegment());
+
+
+                    Uri uri = DataContract.Prescriptions.CONTENT_URI;
+                    for (int i = 0; i < medication.getPrescriptionList().size(); i++) {
+                        Item item = medication.getPrescriptionList().get(i);
+                        ContentValues values = new ContentValues();
+                        values.put(DataContract.Prescriptions.NAME, "Presc - " + i + 1);
+                        values.put(DataContract.Prescriptions.PATH, item.getData());
+                        values.put(DataContract.Prescriptions.TYPE, item.getType());
+                        values.put(DataContract.Prescriptions.STATUS, Item.STATUS_LOCAL);
+                        values.put(DataContract.Prescriptions.MEDICATION_ID, id);
+                        getContentResolver().insert(uri, values);
+                    }
+
+                    Uri reportUri = DataContract.Reports.CONTENT_URI;
+                    for (int i = 0; i < medication.getReportList().size(); i++) {
+                        Item item = medication.getReportList().get(i);
+                        ContentValues values = new ContentValues();
+                        values.put(DataContract.Reports.NAME, "Report - " + i + 1);
+                        values.put(DataContract.Reports.PATH, item.getData());
+                        values.put(DataContract.Reports.TYPE, item.getType());
+                        values.put(DataContract.Reports.STATUS, Item.STATUS_LOCAL);
+                        values.put(DataContract.Reports.MEDICATION_ID, id);
+                        getContentResolver().insert(reportUri, values);
+                    }
+
+                    Uri doctorUri = DataContract.Doctors.CONTENT_URI;
+                    for (int i = 0; i < medication.getDoctorList().size(); i++) {
+                        ContentValues values = new ContentValues();
+                        values.put(DataContract.Doctors.NAME, medication.getDoctorList().get(i).getName());
+                        values.put(DataContract.Doctors.EMAIL, medication.getDoctorList().get(i).getEmail());
+                        values.put(DataContract.Doctors.PHONE_NUMBER, medication.getDoctorList().get(i).getPhoneNumber());
+                        values.put(DataContract.Doctors.ADDRESS, medication.getDoctorList().get(i).getAddress());
+                        values.put(DataContract.Doctors.MEDICATION_ID, id);
+                        getContentResolver().insert(doctorUri, values);
+                    }
+                }catch (Exception ex){
+                    Log.e("AddMedicationsFragment", "Exception",ex);
+                    return false;
+                }
+            }
+            return true;
+        }
+
+
+        @Override
+        protected void onPostExecute(Boolean saved) {
+            if(!saved){
+                Toast.makeText(LauncherActivity.this, "Error retreiving data", Toast.LENGTH_SHORT).show();
+            }else{
+                Toast.makeText(LauncherActivity.this, "Data restored successfully ", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(LauncherActivity.this,HomeActivity.class));
+            }
+        }
+
     }
 
 

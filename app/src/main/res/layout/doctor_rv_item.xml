@@ -40,21 +40,18 @@
                     style="@style/Widget.AppCompat.Button.Colored"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="@dimen/margin"
                     app:srcCompat="@drawable/ic_call"/>
 
                 <ImageButton
                     style="@style/Widget.AppCompat.Button.Colored"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="@dimen/margin"
                     android:src="@drawable/whatsapp_logo"/>
 
                 <ImageButton
                     style="@style/Widget.AppCompat.Button.Colored"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="@dimen/margin"
                     app:srcCompat="@drawable/ic_sms"/>
 
             </LinearLayout>

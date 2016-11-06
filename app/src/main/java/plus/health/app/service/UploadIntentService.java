@@ -93,20 +93,26 @@ public class UploadIntentService extends IntentService {
                             List<Doctor> doctorList = getDoctors(medId);
                             for(Doctor doctor : doctorList){
                                 mDatabase.child("users").child(user.getId()).child("medications").child(medId+"")
-                                        .child("doctors").child(doctor.getId()+"")
+                                        .child("doctor").child(doctor.getId()+"")
+                                        .child("id").setValue(doctor.getId());
+                                mDatabase.child("users").child(user.getId()).child("medications").child(medId+"")
+                                        .child("doctor").child(doctor.getId()+"")
                                         .child("name").setValue(doctor.getName());
                                 mDatabase.child("users").child(user.getId()).child("medications").child(medId+"")
-                                        .child("doctors").child(doctor.getId()+"")
+                                        .child("doctor").child(doctor.getId()+"")
                                         .child("email").setValue(doctor.getEmail());
                                 mDatabase.child("users").child(user.getId()).child("medications").child(medId+"")
-                                        .child("doctors").child(doctor.getId()+"")
+                                        .child("doctor").child(doctor.getId()+"")
                                         .child("address").setValue(doctor.getAddress());
                                 mDatabase.child("users").child(user.getId()).child("medications").child(medId+"")
-                                        .child("doctors").child(doctor.getId()+"")
-                                        .child("phone_number").setValue(doctor.getPhoneNumber());
+                                        .child("doctor").child(doctor.getId()+"")
+                                        .child("phoneNumber").setValue(doctor.getPhoneNumber());
                             }
                             List<Item> prescList = getPrescriptions(medId);
                             for(Item item : prescList){
+                                mDatabase.child("users").child(user.getId()).child("medications").child(medId+"")
+                                        .child("prescriptions").child(item.getId()+"")
+                                        .child("id").setValue(item.getId());
                                 mDatabase.child("users").child(user.getId()).child("medications").child(medId+"")
                                         .child("prescriptions").child(item.getId()+"")
                                         .child("name").setValue(item.getName());
@@ -122,6 +128,9 @@ public class UploadIntentService extends IntentService {
                             }
                             List<Item> reportList = getReports(medId);
                             for(Item item : reportList){
+                                mDatabase.child("users").child(user.getId()).child("medications").child(medId+"")
+                                        .child("reports").child(item.getId()+"")
+                                        .child("id").setValue(item.getId());
                                 mDatabase.child("users").child(user.getId()).child("medications").child(medId+"")
                                         .child("reports").child(item.getId()+"")
                                         .child("name").setValue(item.getName());
