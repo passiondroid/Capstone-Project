@@ -30,8 +30,9 @@
             android:id="@+id/addDoctor"
             style="@style/ButtonStyle"
             android:layout_width="110dp"
-            android:layout_height="120dp"
+            android:layout_height="@dimen/button_height"
             android:layout_marginBottom="@dimen/margin_button"
+            android:contentDescription="@string/add_a_doctor"
             android:text="@string/add_a_doctor"/>
 
         <android.support.v7.widget.RecyclerView
@@ -56,11 +57,12 @@
             android:layout_width="110dp"
             android:layout_height="120dp"
             android:layout_marginBottom="@dimen/margin_button"
+            android:contentDescription="@string/add_prescriptions"
             android:text="@string/add_prescriptions"/>
         <android.support.v7.widget.RecyclerView
             android:id="@+id/listPrescription"
             android:layout_width="match_parent"
-            android:layout_height="120dp">
+            android:layout_height="@dimen/button_height">
         </android.support.v7.widget.RecyclerView>
     </LinearLayout>
 
@@ -77,19 +79,20 @@
             android:layout_width="110dp"
             android:layout_height="120dp"
             android:layout_marginBottom="@dimen/margin_button"
+            android:contentDescription="@string/add_lab_reports"
             android:text="@string/add_lab_reports"/>
         <android.support.v7.widget.RecyclerView
             android:id="@+id/listReports"
             android:layout_width="match_parent"
             android:layout_below="@+id/listPrescription"
-            android:layout_height="120dp">
+            android:layout_height="@dimen/button_height">
         </android.support.v7.widget.RecyclerView>
     </LinearLayout>
 
 
 
     <Button
-        android:text="Save"
+        android:text="@string/save"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"

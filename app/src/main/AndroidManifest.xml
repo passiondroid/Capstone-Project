@@ -73,6 +73,14 @@
                 android:value="plus.health.app.activity.HomeActivity" />
         </activity>
 
+        <receiver android:name=".widget.HealthAppAppWidgetProvider" >
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data android:name="android.appwidget.provider"
+                android:resource="@xml/appwidget_info" />
+        </receiver>
+
         <service
             android:name=".service.UploadIntentService"
             android:exported="false"></service>

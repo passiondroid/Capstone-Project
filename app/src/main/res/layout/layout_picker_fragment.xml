@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:textSize="20sp"
-            android:text="Camera"/>
+            android:text="@string/camera"/>
     </LinearLayout>
 
     <LinearLayout
@@ -42,7 +42,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:textSize="20sp"
-            android:text="File"/>
+            android:text="@string/file"/>
     </LinearLayout>
 
 </LinearLayout>

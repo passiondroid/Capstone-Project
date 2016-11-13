@@ -13,6 +13,7 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="@dimen/sign_margin_bottom"
+        android:contentDescription="@string/sign_in_google"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 

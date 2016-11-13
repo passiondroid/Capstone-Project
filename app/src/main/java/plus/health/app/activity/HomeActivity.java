@@ -62,19 +62,19 @@ public class HomeActivity extends AppCompatActivity
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        FloatingActionButton upfab = (FloatingActionButton) findViewById(R.id.upfab);
+        //FloatingActionButton upfab = (FloatingActionButton) findViewById(R.id.upfab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(HomeActivity.this,AddMedicationsActivity.class));
             }
         });
-        upfab.setOnClickListener(new View.OnClickListener() {
+        /*upfab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 UploadIntentService.startUpload(HomeActivity.this);
             }
-        });
+        });*/
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

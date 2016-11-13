@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:padding="5dp"
     android:layout_width="match_parent"
@@ -23,7 +24,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:text="Dr Steven"
+                tools:text="Dr Seteven"
                 android:fontFamily="sans-serif-medium"
                 android:textSize="18sp"
                 android:layout_width="match_parent"
@@ -40,18 +41,21 @@
                     style="@style/Widget.AppCompat.Button.Colored"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:contentDescription="@string/call"
                     app:srcCompat="@drawable/ic_call"/>
 
                 <ImageButton
                     style="@style/Widget.AppCompat.Button.Colored"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:contentDescription="@string/whatsapp"
                     android:src="@drawable/whatsapp_logo"/>
 
                 <ImageButton
                     style="@style/Widget.AppCompat.Button.Colored"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:contentDescription="@string/sms"
                     app:srcCompat="@drawable/ic_sms"/>
 
             </LinearLayout>

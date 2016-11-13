@@ -27,5 +27,5 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:textColor="@color/colorPrimaryDark"
-        android:text="presc1"/>
+        android:text=""/>
 </RelativeLayout>

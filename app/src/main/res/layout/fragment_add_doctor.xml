@@ -36,6 +36,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="0.8"
             android:maxLines="1"
+            android:contentDescription="@string/name"
             android:singleLine="true"
             android:imeOptions="actionNext"
             android:id="@+id/nameET" />
@@ -60,6 +61,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:inputType="number"
+            android:contentDescription="@string/phoneNumber"
             android:imeOptions="actionNext"
             android:layout_weight="0.8"/>
     </LinearLayout>
@@ -84,6 +86,7 @@
             android:layout_gravity="center"
             android:inputType="textEmailAddress"
             android:maxLines="1"
+            android:contentDescription="@string/email"
             android:imeOptions="actionNext"
             android:layout_weight="0.8"/>
     </LinearLayout>
@@ -108,6 +111,7 @@
             android:layout_gravity="center"
             android:maxLines="1"
             android:inputType="text"
+            android:contentDescription="@string/address"
             android:imeOptions="actionDone"
             android:layout_weight="0.8"/>
     </LinearLayout>
@@ -117,6 +121,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorPrimary"
-        android:text="Save"/>
+        android:text="@string/save"/>
 
 </LinearLayout>

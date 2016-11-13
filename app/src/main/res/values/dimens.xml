@@ -9,4 +9,10 @@
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="margin">8dp</dimen>
     <dimen name="margin_button">5dp</dimen>
+    <dimen name="button_height">120dp</dimen>
+    <dimen name="widget_margin">8dp</dimen>
+    <dimen name="widget_detail_default_width">300dp</dimen>
+    <dimen name="widget_detail_default_height">200dp</dimen>
+    <dimen name="widget_detail_min_resize_width">220dp</dimen>
+    <dimen name="widget_detail_min_resize_height">@dimen/widget_detail_default_height</dimen>
 </resources>

@@ -29,22 +29,16 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@drawable/ic_action_add" />
-
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/upfab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|left"
-        android:layout_margin="@dimen/fab_margin"
+        android:contentDescription="@string/add_medication"
         app:srcCompat="@drawable/ic_action_add" />
 
     <Button
-        android:text="Sign Out"
+        android:text="@string/sign_out"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|center"
         android:onClick="onSignOut"
+        android:contentDescription="@string/sign_out"
         android:id="@+id/button2" />
 
 </android.support.design.widget.CoordinatorLayout>

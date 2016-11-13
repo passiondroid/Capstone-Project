@@ -17,7 +17,6 @@
         android:orientation="vertical">
 
         <TextView
-            android:text="Fever"
             android:fontFamily="sans-serif-medium"
             android:textSize="20sp"
             android:layout_width="match_parent"

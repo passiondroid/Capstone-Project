@@ -123,6 +123,8 @@ public class LauncherActivity extends AppCompatActivity implements View.OnClickL
             } else {
                 // Google Sign In failed, update UI appropriately
                 // ...
+                System.out.println("result.toString() = " + result.toString());
+                System.out.println(result.getStatus());
             }
         }
     }
@@ -171,7 +173,7 @@ public class LauncherActivity extends AppCompatActivity implements View.OnClickL
                         // signed in user can be handled in the listener.
                         if (!task.isSuccessful()) {
                             Log.w(TAG, "signInWithCredential", task.getException());
-                            Toast.makeText(LauncherActivity.this, "Authentication failed.",
+                            Toast.makeText(LauncherActivity.this, getResources().getString(R.string.authentication_failed),
                                     Toast.LENGTH_SHORT).show();
                         }
                     }
