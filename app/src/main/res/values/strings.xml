@@ -31,4 +31,6 @@
     <string name="camera">Camera</string>
     <string name="file">File</string>
     <string name="save">Save</string>
+    <string name="sign_in_failed">"Sign In failed, Network problem"</string>
+
 </resources>

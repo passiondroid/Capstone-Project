@@ -7,6 +7,5 @@ import com.facebook.stetho.Stetho;
 public class HealthPlusApp extends Application {
   public void onCreate() {
     super.onCreate();
-    Stetho.initializeWithDefaults(this);
   }
 }

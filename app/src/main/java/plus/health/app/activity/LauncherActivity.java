@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
@@ -182,7 +183,7 @@ public class LauncherActivity extends AppCompatActivity implements View.OnClickL
 
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
-        Toast.makeText(LauncherActivity.this, "Sign In failed, Network problem", Toast.LENGTH_SHORT).show();
+        Toast.makeText(LauncherActivity.this, getResources().getString(R.string.sign_in_failed), Toast.LENGTH_SHORT).show();
     }
 
     private class WriteNewUserTask extends AsyncTask<Object, Void, Void> {
@@ -203,7 +204,6 @@ public class LauncherActivity extends AppCompatActivity implements View.OnClickL
                                 List<Medication> medicationList = new ArrayList<>();
                                 for (DataSnapshot medicationSpshot : dataSnapshot.getChildren()) {
                                     Medication medication = new Medication();
-                                    System.out.println("Medication Snapshot :::::::::::: "+medicationSpshot.toString());
                                     medication.setId(Integer.parseInt(medicationSpshot.getKey()));
                                     // for (DataSnapshot medicationValueSpshot : dataSnapshot.getChildren()) {
                                     HashMap map = (HashMap) medicationSpshot.getValue();
