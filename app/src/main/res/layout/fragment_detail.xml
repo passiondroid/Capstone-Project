@@ -5,15 +5,15 @@
     android:layout_width="fill_parent"
     android:layout_height="match_parent"
     android:id="@+id/card_view"
-    android:layout_margin="8dp"
-    card_view:cardCornerRadius="4dp"
-    card_view:cardElevation="5dp">
+    android:layout_margin="@dimen/margin"
+    card_view:cardCornerRadius="@dimen/card_radius"
+    card_view:cardElevation="@dimen/margin_button">
 
     <LinearLayout
         android:id="@+id/content_detail"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="10dp"
+        android:padding="@dimen/detail_padding"
         android:orientation="vertical">
 
         <TextView
@@ -26,21 +26,21 @@
         <android.support.v7.widget.RecyclerView
             android:id="@+id/listDoctor"
             android:layout_width="match_parent"
-            android:layout_height="120dp">
+            android:layout_height="@dimen/recycler_height">
         </android.support.v7.widget.RecyclerView>
 
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/listPrescription"
             android:layout_width="match_parent"
-            android:layout_height="120dp">
+            android:layout_height="@dimen/recycler_height">
         </android.support.v7.widget.RecyclerView>
 
         <android.support.v7.widget.RecyclerView
             android:id="@+id/listReports"
             android:layout_width="match_parent"
             android:layout_below="@+id/listPrescription"
-            android:layout_height="120dp">
+            android:layout_height="@dimen/recycler_height">
         </android.support.v7.widget.RecyclerView>
 
     </LinearLayout>

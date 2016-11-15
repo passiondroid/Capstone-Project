@@ -128,7 +128,7 @@ public class AddDoctorFragment extends Fragment implements View.OnClickListener,
                             .into(imageView);
                 }
                 else
-                    Toast.makeText(getActivity(),"File type not supported",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getActivity(),getResources().getString(R.string.file_not_supported),Toast.LENGTH_SHORT).show();
             }
 
         }
@@ -176,16 +176,16 @@ public class AddDoctorFragment extends Fragment implements View.OnClickListener,
 
     private boolean validate(){
         if(nameET.getText().toString().trim().equals("")){
-            nameET.setError("Please enter name");
+            nameET.setError(getResources().getString(R.string.error_name));
             return false;
         }else if(phoneET.getText().toString().trim().equals("")){
-            phoneET.setError("Please enter phone number");
+            phoneET.setError(getResources().getString(R.string.error_phone_number));
             return false;
         }else if(emailET.getText().toString().trim().equals("")){
-            emailET.setError("Please enter email id");
+            emailET.setError(getResources().getString(R.string.error_email));
             return false;
         }else if(addressET.getText().toString().trim().equals("")){
-            addressET.setError("Please enter address");
+            addressET.setError(getResources().getString(R.string.error_address));
             return false;
         }
         return true;

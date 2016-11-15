@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:padding="5dp"
+    android:padding="@dimen/margin_button"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -13,8 +13,8 @@
         android:orientation="horizontal">
 
         <ImageView
-            android:layout_width="80dp"
-            android:layout_height="80dp"
+            android:layout_width="@dimen/doctor_image_height"
+            android:layout_height="@dimen/doctor_image_height"
             app:srcCompat="@drawable/ic_person"/>
 
         <LinearLayout
@@ -34,7 +34,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="@dimen/margin_button"
                 android:orientation="horizontal">
 
                 <ImageButton

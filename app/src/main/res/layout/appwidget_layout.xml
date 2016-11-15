@@ -9,7 +9,7 @@
 <LinearLayout
     android:id="@+id/layout"
     android:layout_width="wrap_content"
-    android:layout_height="160dp"
+    android:layout_height="@dimen/widger_height"
     android:padding="@dimen/widget_margin"
     android:orientation="horizontal">
 

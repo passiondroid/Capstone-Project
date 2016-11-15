@@ -180,7 +180,7 @@ public class AddMedicationsFragment extends Fragment implements View.OnClickList
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == REQUEST_IMAGE_CAPTURE_PRESCRIPTION && resultCode == RESULT_OK) {
-            Toast.makeText(getActivity(), "Picture taken", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), getResources().getString(R.string.picture_taken), Toast.LENGTH_SHORT).show();
             Item item = new Item();
             item.setData(mCurrentPhotoPath);
             item.setType(Item.TYPE_IMAGE);
@@ -188,7 +188,7 @@ public class AddMedicationsFragment extends Fragment implements View.OnClickList
             prescAdapter.notifyDataSetChanged();
         }else if(requestCode == REQUEST_FILE_SELECTION_PRESCRIPTION && resultCode == RESULT_OK){
             ContentResolver contentResolver = getActivity().getContentResolver();
-            Toast.makeText(getActivity(), "File Selected", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), getResources().getString(R.string.file_selected), Toast.LENGTH_SHORT).show();
             String path = data.getDataString();
             Uri uri = data.getData();
             String mimeType = contentResolver.getType(uri);
@@ -203,7 +203,7 @@ public class AddMedicationsFragment extends Fragment implements View.OnClickList
             prescAdapter.notifyDataSetChanged();
         }else if (requestCode == REQUEST_IMAGE_CAPTURE_REPORTS && resultCode == RESULT_OK) {
             //TODO: Move the file to specific location
-            Toast.makeText(getActivity(), "Picture taken", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), getResources().getString(R.string.picture_taken), Toast.LENGTH_SHORT).show();
             Item item = new Item();
             item.setData(mCurrentPhotoPath);
             item.setType(Item.TYPE_IMAGE);
@@ -211,7 +211,7 @@ public class AddMedicationsFragment extends Fragment implements View.OnClickList
             reportsAdapter.notifyDataSetChanged();
         }else if(requestCode == REQUEST_FILE_SELECTION_REPORTS && resultCode == RESULT_OK){
             ContentResolver contentResolver = getActivity().getContentResolver();
-            Toast.makeText(getActivity(), "File Selected", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), getResources().getString(R.string.file_selected), Toast.LENGTH_SHORT).show();
             String path = data.getDataString();
             Uri uri = data.getData();
             String mimeType = contentResolver.getType(uri);
@@ -306,7 +306,7 @@ public class AddMedicationsFragment extends Fragment implements View.OnClickList
         @Override
         protected void onPostExecute(Boolean saved) {
             if(!saved){
-                Toast.makeText(getActivity(), "Error saving data in db", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity(), getResources().getString(R.string.error_save_data_db), Toast.LENGTH_SHORT).show();
             }
             getActivity().finish();
         }

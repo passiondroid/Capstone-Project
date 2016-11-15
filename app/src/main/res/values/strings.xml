@@ -32,5 +32,15 @@
     <string name="file">File</string>
     <string name="save">Save</string>
     <string name="sign_in_failed">"Sign In failed, Network problem"</string>
+    <string name="error_retreiving_data">"Error retreiving data"</string>
+    <string name="data_stored_successfully">"Data restored successfully"</string>
+    <string name="file_not_supported">"File type not supported"</string>
+    <string name="error_name">"Please enter name"</string>
+    <string name="error_phone_number">"Please enter phone number"</string>
+    <string name="error_email">"Please enter email id"</string>
+    <string name="error_address">"Please enter address"</string>
+    <string name="picture_taken">"Picture taken"</string>
+    <string name="file_selected">"File Selected"</string>
+    <string name="error_save_data_db">"Error saving data in db"</string>
 
 </resources>

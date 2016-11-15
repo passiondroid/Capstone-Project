@@ -413,9 +413,9 @@ public class LauncherActivity extends AppCompatActivity implements View.OnClickL
         @Override
         protected void onPostExecute(Boolean saved) {
             if(!saved){
-                Toast.makeText(LauncherActivity.this, "Error retreiving data", Toast.LENGTH_SHORT).show();
+                Toast.makeText(LauncherActivity.this, getResources().getString(R.string.error_retreiving_data), Toast.LENGTH_SHORT).show();
             }else{
-                Toast.makeText(LauncherActivity.this, "Data restored successfully ", Toast.LENGTH_SHORT).show();
+                Toast.makeText(LauncherActivity.this, getResources().getString(R.string.data_stored_successfully), Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(LauncherActivity.this,HomeActivity.class));
             }
         }

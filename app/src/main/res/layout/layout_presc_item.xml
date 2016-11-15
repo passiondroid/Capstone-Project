@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="100dp"
-    android:layout_height="130dp"
-    android:layout_marginRight="10dp"
+    android:layout_width="@dimen/presc_height"
+    android:layout_height="@dimen/presc_height"
+    android:layout_marginRight="@dimen/detail_padding"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <ImageView
         android:id="@+id/file"
         android:orientation="vertical"
-        android:layout_marginTop="10dp"
-        android:layout_marginRight="5dp"
+        android:layout_marginTop="@dimen/detail_padding"
+        android:layout_marginRight="@dimen/margin_button"
         android:layout_width="match_parent"
         android:src="@drawable/file"
-        android:layout_height="100dp" />
+        android:layout_height="@dimen/presc_image_height" />
     <ImageView
         android:id="@+id/cancel"
         android:layout_width="wrap_content"

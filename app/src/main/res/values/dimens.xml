@@ -11,8 +11,17 @@
     <dimen name="margin_button">5dp</dimen>
     <dimen name="button_height">120dp</dimen>
     <dimen name="widget_margin">8dp</dimen>
+    <dimen name="card_radius">4dp</dimen>
     <dimen name="widget_detail_default_width">300dp</dimen>
     <dimen name="widget_detail_default_height">200dp</dimen>
     <dimen name="widget_detail_min_resize_width">220dp</dimen>
+    <dimen name="recycler_height">120dp</dimen>
+    <dimen name="widger_height">160dp</dimen>
+    <dimen name="doctor_image_height">80dp</dimen>
+    <dimen name="doctor_button_width">110dp</dimen>
+    <dimen name="detail_padding">10dp</dimen>
+    <dimen name="presc_image_height">100dp</dimen>
+    <dimen name="presc_height">130dp</dimen>
+    <dimen name="header_image_height">80dp</dimen>
     <dimen name="widget_detail_min_resize_height">@dimen/widget_detail_default_height</dimen>
 </resources>
