@@ -38,7 +38,7 @@
             android:layout_centerHorizontal="true"
             android:gravity="right"
             android:clickable="true"
-            android:text="View More"
+            android:text="@string/view_more"
             android:fontFamily="sans-serif-condensed"
             android:textColor="@color/cardview_dark_background"
             android:textSize="18sp"

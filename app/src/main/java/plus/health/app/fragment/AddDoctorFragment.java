@@ -117,7 +117,7 @@ public class AddDoctorFragment extends Fragment implements View.OnClickListener,
             imageView.setImageBitmap(bitmap);
         } else if (requestCode == REQUEST_FILE_SELECTION && resultCode == RESULT_OK) {
             ContentResolver contentResolver = getActivity().getContentResolver();
-            Toast.makeText(getActivity(), "File Selected", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getActivity(), getResources().getString(R.string.file_selected), Toast.LENGTH_SHORT).show();
             String path = data.getDataString();
             Uri uri = data.getData();
             String mimeType = contentResolver.getType(uri);

@@ -42,5 +42,6 @@
     <string name="picture_taken">"Picture taken"</string>
     <string name="file_selected">"File Selected"</string>
     <string name="error_save_data_db">"Error saving data in db"</string>
+    <string name="view_more">View More</string>
 
 </resources>
